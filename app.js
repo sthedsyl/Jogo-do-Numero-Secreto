@@ -30,6 +30,9 @@ function verificarChute() {
     if (chute > numeroSecreto) {
       exibirTextoNaTela('p', 'Errou! O número secreto é menor');
     }
+    else if ( chute < 0 || chute > numeroLimite) {
+      exibirTextoNaTela('p', `Errou! Insira um número válido de 0 a ${numeroLimite}`)
+    }
     else {
       exibirTextoNaTela('p', 'Errou! O número secreto é maior');
     }
