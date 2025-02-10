@@ -27,11 +27,12 @@ function verificarChute() {
     document.getElementById('reiniciar').removeAttribute('disabled');
   }
   else {
-    if (chute > numeroSecreto) {
-      exibirTextoNaTela('p', 'Errou! O número secreto é menor');
+
+    if ( chute < 0 || chute > numeroLimite) {
+      exibirTextoNaTela('p', `Errou! Insira um número válido de 0 a ${numeroLimite}`);
     }
-    else if ( chute < 0 || chute > numeroLimite) {
-      exibirTextoNaTela('p', `Errou! Insira um número válido de 0 a ${numeroLimite}`)
+    else if (chute > numeroSecreto) {
+      exibirTextoNaTela('p', 'Errou! O número secreto é menor');
     }
     else {
       exibirTextoNaTela('p', 'Errou! O número secreto é maior');
